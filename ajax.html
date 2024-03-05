@@ -12,11 +12,21 @@
     <script>
         let list = document.getElementById("list");
         list.innerHTML = "...Loading...";
-        fetch("https://janetchen1980.github.io/TEST/README.md").then(function (data) {
-            return data.text();
+        fetch("https://janetchen1980.github.io/TEST/data/products.json").then(function (data) {
+            return data.json();
         }).then(function (result) {
-            console.log("最終的資料", result);
+            list.innerHTML = "";
+            let product, sum = -0;
+            for (let i = 0; i < result.length; i++) {
+                product = result[i];
+                console.log(product);
+                list.innerHTML += product.name + "-" + product.price + "<br\>";
+                sum += product.price;
+            }
+            let avg = sum / result.length;
+            list.innerHTML += "agv=" + avg + "<br\>";
         });
+
     </script>
 
 </body>
