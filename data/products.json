@@ -1,0 +1,14 @@
+[
+    {
+        "name": "AAA",
+        "price": 500
+    },
+    {
+        "name": "BBB",
+        "price": 300
+    },
+    {
+        "name": "CCC",
+        "price": 100
+    }
+]
